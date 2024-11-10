@@ -2,10 +2,11 @@ package main
 
 import (
 	"context"
-	"critiqally/views"
 	"log"
 	"net/http"
 	"time"
+
+	"critiqally/views/pages"
 
 	"github.com/gorilla/mux"
 )
@@ -33,6 +34,6 @@ func indexPageHandler() http.HandlerFunc {
 		ctx, cancel := context.WithTimeout(context.Background(), appTimeout)
 		defer cancel()
 
-		views.Index().Render(ctx, w)
+		pages.Index().Render(ctx, w)
 	}
 }
