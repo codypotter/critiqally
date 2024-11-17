@@ -1,0 +1,16 @@
+package pages
+import (
+    "critiqally/views/components"
+)
+
+templ Page(contents templ.Component) {
+    <!DOCTYPE html>
+    <html lang="en">
+        @components.Head()
+        <body>
+            @components.Header()
+            @contents
+        </body>
+        @components.Footer()
+    </html>
+}
